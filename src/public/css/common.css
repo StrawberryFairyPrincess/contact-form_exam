@@ -1,0 +1,27 @@
+html {
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-style: normal;
+    background: #fff;
+    color: #8B7969;
+}
+
+.header {
+    border-bottom: 1px solid #E0DFDE;
+    height: 100px;
+    max-width: 1512px;
+}
+
+.header__inner {
+    margin: 0 auto;
+    padding: 20px 15px;
+    text-align: center;
+}
+
+.header__logo {
+    color: #8B7969;
+    font-size: 40px;
+    text-decoration: none;
+    width: 100%;
+    margin: auto;
+}
