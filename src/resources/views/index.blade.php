@@ -11,8 +11,8 @@
             <h2>Contact</h2>
         </div>
 
-        {{-- POSTメソッドで/contacts/confirmに送信する --}}
-        <form class="form" action="/contacts/confirm" method="post">
+        {{-- POSTメソッドで/confirmに送信する --}}
+        <form class="form" action="/confirm" method="post">
             @csrf
 
             <div class="form__group">
@@ -65,15 +65,15 @@
 
                     <div class="form__input--radio">
                         <label class="form__input--radio-label">
-                            <input class="form__input--radio-button" type="radio" name="gender" value="man" checked>
+                            <input class="form__input--radio-button" type="radio" name="gender" value="男性" checked>
                             <span class="form__input--radio-text">男性</span>
                         </label>
                         <label class="form__input--radio-label">
-                            <input class="form__input--radio-button" type="radio" name="gender" value="woman">
+                            <input class="form__input--radio-button" type="radio" name="gender" value="女性">
                             <span class="form__input--radio-text">女性</span>
                         </label>
                         <label class="form__input--radio-label">
-                            <input class="form__input--radio-button" type="radio" name="gender" value="other">
+                            <input class="form__input--radio-button" type="radio" name="gender" value="その他">
                             <span class="form__input--radio-text">その他</span>
                         </label>
                     </div>
@@ -145,9 +145,29 @@
                     </div>
 
                     {{-- バリデーションエラーメッセージ --}}
+                    <?php
+                        $area = null;
+                        $city = null;
+                    ?>
                     <div class="form__error">
-                        @error('tel')
+                        @error('tel-area')
                             {{ $message }}
+                            <?php $area = $message; ?>
+                        @enderror
+                    </div>
+                    <div class="form__error">
+                        @error('tel-city')
+                            @if( $message != $area )
+                                {{ $message }}
+                            @endif
+                            <?php $city = $message; ?>
+                        @enderror
+                    </div>
+                    <div class="form__error">
+                        @error('tel-subscriber')
+                            @if( $message != $area && $message != $city )
+                                {{ $message }}
+                            @endif
                         @enderror
                     </div>
 
@@ -211,14 +231,12 @@
 
                                 <option value="" selected>選択してください</option>
 
-                                <option value="test">てすと</option>
-
-                                {{-- @foreach($categories as $category) --}}
+                                @foreach($categories as $category)
                                     {{-- categoriesテーブルのidをTodoControllerに渡す --}}
-                                    {{-- <option value="{{ $category['id'] }}"> --}}
-                                        {{-- {{ $category['name'] }} --}}
-                                    {{-- </option> --}}
-                                {{-- @endforeach --}}
+                                    <option value="{{ $category['id'] }}" >
+                                        {{ $category['content'] }}
+                                    </option>
+                                @endforeach
 
                             </select>
 
@@ -227,7 +245,7 @@
 
                     {{-- バリデーションエラーメッセージ --}}
                     <div class="form__error">
-                        @error('address')
+                        @error('category_id')
                             {{ $message }}
                         @enderror
                     </div>
@@ -245,12 +263,12 @@
 
                 <div class="form__group-content">
                     <div class="form__input--textarea">
-                        <textarea name="content" placeholder="お問い合わせ内容をご記載ください" value="{{ old('building') }}"></textarea>
+                        <textarea name="detail" placeholder="お問い合わせ内容をご記載ください">{{ old('detail') }}</textarea>
                     </div>
 
                     {{-- バリデーションエラーメッセージ --}}
                     <div class="form__error">
-                        @error('content')
+                        @error('detail')
                             {{ $message }}
                         @enderror
                     </div>

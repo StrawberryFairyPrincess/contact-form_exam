@@ -15,7 +15,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
         // categoriesテーブルへのシーディング処理
         $this->call(CategoriesTableSeeder::class);
 

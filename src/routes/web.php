@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
-// use App\Http\Controllers\TodoController;
 // use App\Http\Controllers\CategoryController;
 
 
@@ -20,10 +19,12 @@ use App\Http\Controllers\ContactController;
 
 // getメソッドで'/'にアクセスしたときContactControllerクラスの'index'アクションを呼び出す
 Route::get('/', [ContactController::class, 'index']);
-// postメソッドで'/contacts/confirm'にアクセスしたときContactControllerクラスの'confirm'アクションを呼び出す
-// Route::post('/contacts/confirm', [ContactController::class, 'confirm']);
-// postメソッドで'/contacts'にアクセスしたときContactControllerクラスの'store'アクションを呼び出す
-// Route::post('/contacts', [ContactController::class, 'store']);
+// postメソッドで'/confirm'にアクセスしたときContactControllerクラスの'confirm'アクションを呼び出す
+Route::post('/confirm', [ContactController::class, 'confirm']);
+// postメソッドで'/confirm/store'にアクセスしたときContactControllerクラスの'store'アクションを呼び出す
+Route::post('/confirm/store', [ContactController::class, 'store']);
+// postメソッドで'/confirm/correct'にアクセスしたときContactControllerクラスの'correct'アクションを呼び出す
+// Route::post('/confirm/correct', [ContactController::class, 'correct']);
 
 // // getメソッドで'/'にアクセスしたとき、TodoControllerの'index'アクションを呼び出す
 // Route::get('/', [TodoController::class, 'index']);
