@@ -37,7 +37,7 @@ class Contact extends Model
         'first-name' => 'required',
         'gender' => 'required',
         'email' => 'required|email',
-        'tel' => 'required|integer|min:10|max:11',
+        'tel' => 'required|numeric|min:10|max:11',
         'address' => 'required',
         'building' => 'nullable',
         'detail' => 'required'
