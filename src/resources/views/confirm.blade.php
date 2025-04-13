@@ -12,8 +12,8 @@
                 <h2>Confirm</h2>
             </div>
 
-            {{-- POSTメソッドで/confirm/storeに送信する --}}
-            <form class="form" action="/confirm/store" method="POST">
+            {{-- POSTメソッドで/thanksに送信する --}}
+            <form class="form" action="/thanks" method="POST">
                 @csrf
 
                 <div class="confirm-table">

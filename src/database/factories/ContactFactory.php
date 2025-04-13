@@ -19,12 +19,12 @@ class ContactFactory extends Factory
             'category_id' => $this->faker->numberBetween(1, 5),
             'last-name' => $this->faker->lastName(),
             'first-name' => $this->faker->firstName(),
-            'gender' => $this->faker->numberBetween(0, 2),
+            'gender' => $this->faker->randomElement(['男性', '女性', 'その他']),
             'email' => $this->faker->safeEmail(),
             'tel' => $this->faker->phoneNumber(),
             'address' => $this->faker->address(),
             'building' => $this->faker->word(),
-            'detail' => $this->faker->sentence()
+            'detail' => $this->faker->realText(100,1)
 
         ];
     }
