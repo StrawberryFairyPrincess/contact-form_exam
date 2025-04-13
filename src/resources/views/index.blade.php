@@ -65,15 +65,15 @@
 
                     <div class="form__input--radio">
                         <label class="form__input--radio-label">
-                            <input class="form__input--radio-button" type="radio" name="gender" value="男性" checked>
+                            <input class="form__input--radio-button" type="radio" name="gender" value="男性" checked {{ old('gender') == "男性" ? 'checked' : '' }}>
                             <span class="form__input--radio-text">男性</span>
                         </label>
                         <label class="form__input--radio-label">
-                            <input class="form__input--radio-button" type="radio" name="gender" value="女性">
+                            <input class="form__input--radio-button" type="radio" name="gender" value="女性" {{ old('gender') == "女性" ? 'checked' : '' }}>
                             <span class="form__input--radio-text">女性</span>
                         </label>
                         <label class="form__input--radio-label">
-                            <input class="form__input--radio-button" type="radio" name="gender" value="その他">
+                            <input class="form__input--radio-button" type="radio" name="gender" value="その他" {{ old('gender') == "その他" ? 'checked' : '' }}>
                             <span class="form__input--radio-text">その他</span>
                         </label>
                     </div>
@@ -233,7 +233,7 @@
 
                                 @foreach($categories as $category)
                                     {{-- categoriesテーブルのidをTodoControllerに渡す --}}
-                                    <option value="{{ $category['id'] }}" >
+                                    <option value="{{ $category['id'] }}" @if( old('category_id') == $category['id'] ) selected @endif>
                                         {{ $category['content'] }}
                                     </option>
                                 @endforeach
