@@ -21,8 +21,8 @@ use App\Http\Controllers\ContactController;
 Route::get('/', [ContactController::class, 'index']);
 // postメソッドで'/confirm'にアクセスしたときContactControllerクラスの'confirm'アクションを呼び出す
 Route::post('/confirm', [ContactController::class, 'confirm']);
-// postメソッドで'/confirm/store'にアクセスしたときContactControllerクラスの'store'アクションを呼び出す
-Route::post('/confirm/store', [ContactController::class, 'store']);
+// postメソッドで'/thanks'にアクセスしたときContactControllerクラスの'store'アクションを呼び出す
+Route::post('/thanks', [ContactController::class, 'store']);
 // postメソッドで'/confirm/correct'にアクセスしたときContactControllerクラスの'correct'アクションを呼び出す
 // Route::post('/confirm/correct', [ContactController::class, 'correct']);
 
