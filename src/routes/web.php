@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
-// use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\AuthController;
+
 
 
 /*
@@ -23,8 +24,17 @@ Route::get('/', [ContactController::class, 'index']);
 Route::post('/confirm', [ContactController::class, 'confirm']);
 // postメソッドで'/thanks'にアクセスしたときContactControllerクラスの'store'アクションを呼び出す
 Route::post('/thanks', [ContactController::class, 'store']);
-// postメソッドで'/confirm/correct'にアクセスしたときContactControllerクラスの'correct'アクションを呼び出す
-// Route::post('/confirm/correct', [ContactController::class, 'correct']);
+
+
+// ミドルウェア
+Route::middleware('auth')->group(function () {
+    Route::get('/admin', [AuthController::class, 'admin']);
+});
+
+
+
+
+
 
 // // getメソッドで'/'にアクセスしたとき、TodoControllerの'index'アクションを呼び出す
 // Route::get('/', [TodoController::class, 'index']);
