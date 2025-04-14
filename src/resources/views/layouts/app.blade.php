@@ -17,11 +17,49 @@
 <body>
 
     <header class="header">
+
         <div class="header__inner">
-            <a class="header__logo" href="/">
-                FashionablyLate
-            </a>
+            {{-- <div class="header-utilities"> --}}
+
+                <a class="header__logo" href="/">
+                    FashionablyLate
+                </a>
+
+            {{-- </div> --}}
+
+
+            <nav>
+                <ul class="header-nav">
+
+                    @if(Auth::check())
+                        <li class="header-nav__item">
+                            <form  class="header-nav__button" action="/logout" method="POST">
+                                @csrf
+                                <button type="submit">logout</button>
+                            </form>
+                        </li>
+                    {{-- @else
+                        @if()
+                            <li class="header-nav__item">
+                                <form  class="header-nav__button" action="/register" method="POST">
+                                    @csrf
+                                    <button type="submit">register</button>
+                                </form>
+                            </li>
+                        @elseif()
+                            <li class="header-nav__item">
+                                <form  class="header-nav__button" action="/login" method="POST">
+                                    @csrf
+                                    <button type="submit">login</button>
+                                </form>
+                            </li>
+                        @endif --}}
+                    @endif
+                </ul>
+            </nav>
+
         </div>
+
     </header>
 
     <main>

@@ -18,7 +18,7 @@
 }
 
 .confirm-table {
-    font-family: "Inika", serif;
+    font-family: "Inika";
     font-weight: 400;
     font-style: normal;
     font-size: 20px;
@@ -26,7 +26,7 @@
     text-align: left;
 }
 .confirm-table input {
-    font-family: "Inika", serif;
+    font-family: "Inika";
     font-weight: 400;
     font-style: normal;
     font-size: 20px;
@@ -70,7 +70,7 @@
 }
 .form__button button,
 .form__button input {
-    font-family: "Inika", serif;
+    font-family: "Inika";
     font-weight: 400;
     font-style: normal;
     font-size: 20px;

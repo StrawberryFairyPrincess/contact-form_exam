@@ -1,5 +1,5 @@
 html {
-    font-family: "Inika", serif;
+    font-family: "Inika";
     font-weight: 400;
     font-style: normal;
     background: #fff;
@@ -16,6 +16,7 @@ html {
     margin: 0 auto;
     padding: 20px 15px;
     text-align: center;
+    position: relative;
 }
 
 .header__logo {
@@ -24,4 +25,27 @@ html {
     text-decoration: none;
     width: 100%;
     margin: auto;
+}
+
+nav {
+    position: absolute;
+    top: 50%;
+    right: 100px;
+    transform: translate(0%, -50%);
+}
+
+.header-nav {
+    align-items: center;
+    text-align: right;
+}
+
+.header-nav__button button {
+    background: #F0F0F099;
+    border: solid 1px #D9C6B5;
+    width: 100px;
+    height: 34px;
+    font-family: "Inika";
+    font-size: 20px;
+    color: #D9C6B5;
+    cursor: pointer;
 }

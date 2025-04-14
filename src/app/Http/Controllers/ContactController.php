@@ -78,5 +78,4 @@ class ContactController extends Controller
         return view('thanks');
     }
 
-
 }
