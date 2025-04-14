@@ -41,7 +41,7 @@
 }
 
 input, textarea, select {
-    font-family: "Inika", serif;
+    font-family: "Inika";
     font-weight: 400;
     font-style: normal;
     font-size: 14px;
@@ -150,7 +150,7 @@ input, textarea, select {
     margin-top: 50px;
 }
 .form__button-submit {
-    font-family: "Inika", serif;
+    font-family: "Inika";
     font-weight: 400;
     font-style: normal;
     font-size:20px;

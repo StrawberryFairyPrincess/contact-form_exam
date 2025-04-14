@@ -5,7 +5,6 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AuthController;
 
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,10 +25,16 @@ Route::post('/confirm', [ContactController::class, 'confirm']);
 Route::post('/thanks', [ContactController::class, 'store']);
 
 
+// postメソッドで'/register'にアクセスしたときAuthControllerクラスの'store'アクションを呼び出す
+Route::post('/register', [AuthController::class, 'store']);
+
+
+
 // ミドルウェア
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [AuthController::class, 'admin']);
 });
+
 
 
 
