@@ -28,7 +28,8 @@ class CreateNewUser implements CreatesNewUsers
                 'max:255',
                 Rule::unique(User::class),
             ],
-            'password' => $this->passwordRules(),
+            // 'password' => $this->passwordRules(),
+            'password' => ['required', 'string', 'max:255'],
         ])->validate();
 
         return User::create([
@@ -37,4 +38,14 @@ class CreateNewUser implements CreatesNewUsers
             'password' => Hash::make($input['password']),
         ]);
     }
+
+    // public function messages()
+    // {
+    //     return [
+    //         'name.required' => 'お名前を入力してください',
+    //         'email.required' => 'メールアドレスを入力してください',
+    //         'email.email' => 'メールアドレスは「ユーザー名@ドメイン」形式で入力してください',
+    //         'password' => 'パスワードを入力してください',
+    //     ];
+    // }
 }

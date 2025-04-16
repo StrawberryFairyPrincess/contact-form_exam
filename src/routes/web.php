@@ -25,17 +25,17 @@ Route::post('/confirm', [ContactController::class, 'confirm']);
 Route::post('/thanks', [ContactController::class, 'store']);
 
 
-// postメソッドで'/register'にアクセスしたときAuthControllerクラスの'store'アクションを呼び出す
-Route::post('/register', [AuthController::class, 'store']);
-
-
 
 // ミドルウェア
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [AuthController::class, 'admin']);
 });
-
-
+// getメソッドで'/search'にアクセスしたときAuthControllerクラスの'search'アクションを呼び出す
+Route::get('/search', [AuthController::class, 'search']);
+// loginページからのリンク
+Route::get('/register', [AuthController::class, 'register']);
+// registerページからのリンク
+Route::get('/login', [AuthController::class, 'login']);
 
 
 

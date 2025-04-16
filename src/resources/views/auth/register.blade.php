@@ -14,7 +14,7 @@
 
   <div class="form__flex">
     <div class="form__style">
-      <form class="form" action="/register" method="post">
+      <form class="form" action="/register" method="POST">
         @csrf
 
         <div class="form__group">
@@ -31,7 +31,7 @@
 
             <div class="form__error">
               @error('name')
-              {{ $message }}
+                お名前を入力してください
               @enderror
             </div>
 
@@ -53,11 +53,7 @@
 
             <div class="form__error">
               @error('email')
-                @if( $message == 'メールアドレスを入力してください' )
-                  {{ $message }}
-                @elseif( $message != 'メールアドレスを入力してください' )
-                  メールアドレスを入力してください
-                @endif
+                メールアドレスを入力してください
               @enderror
             </div>
 
@@ -79,11 +75,7 @@
 
             <div class="form__error">
               @error('password')
-                @if( $message == 'パスワードを入力してください' )
-                  {{ $message }}
-                @elseif( $message != 'パスワードを入力してください' )
-                  パスワードを入力してください
-                @endif
+                パスワードを入力してください
               @enderror
             </div>
 
