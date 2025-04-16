@@ -19,42 +19,38 @@
     <header class="header">
 
         <div class="header__inner">
-            {{-- <div class="header-utilities"> --}}
 
-                <a class="header__logo" href="/">
-                    FashionablyLate
-                </a>
-
-            {{-- </div> --}}
-
+            <a class="header__logo" href="/">
+                FashionablyLate
+            </a>
 
             <nav>
                 <ul class="header-nav">
+                    <?php $path = $_SERVER['REQUEST_URI'];
 
-                    @if(Auth::check())
+                    if ( ( strpos($path, '/admin') !== false ) && Auth::check() ){ ?>
                         <li class="header-nav__item">
                             <form  class="header-nav__button" action="/logout" method="POST">
                                 @csrf
                                 <button type="submit">logout</button>
                             </form>
                         </li>
-                    {{-- @else
-                        @if()
-                            <li class="header-nav__item">
-                                <form  class="header-nav__button" action="/register" method="POST">
-                                    @csrf
-                                    <button type="submit">register</button>
-                                </form>
-                            </li>
-                        @elseif()
-                            <li class="header-nav__item">
-                                <form  class="header-nav__button" action="/login" method="POST">
-                                    @csrf
-                                    <button type="submit">login</button>
-                                </form>
-                            </li>
-                        @endif --}}
-                    @endif
+                    <?php } elseif( strpos($path, '/login') !== false ){ ?>
+                        <li class="header-nav__item">
+                            <form  class="header-nav__button" action="/register" method="GET">
+                                @csrf
+                                <button type="submit">register</button>
+                            </form>
+                        </li>
+                    <?php }elseif( strpos($path, '/register') !== false ){ ?>
+                        <li class="header-nav__item">
+                            <form  class="header-nav__button" action="/login" method="GET">
+                                @csrf
+                                <button type="submit">login</button>
+                            </form>
+                        </li>
+                    <?php } ?>
+
                 </ul>
             </nav>
 

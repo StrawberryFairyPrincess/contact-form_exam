@@ -71,6 +71,16 @@ class ContactController extends Controller
             'detail'
         ]);
 
+        if( $contact['gender'] == '男性' ){
+            $contact['gender'] = 1;
+        }
+        elseif( $contact['gender'] == '女性' ){
+            $contact['gender'] = 2;
+        }
+        elseif( $contact['gender'] == 'その他' ){
+            $contact['gender'] = 3;
+        }
+
         // $contactの変数に格納されたデータを作成
         Contact::create($contact);
 

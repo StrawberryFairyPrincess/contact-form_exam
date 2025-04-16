@@ -5,8 +5,11 @@
 }
 
 .contact-form__heading {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     text-align: center;
+}
+.contact-form__heading h2{
+    font-size: 35px;
 }
 
 .form {
@@ -36,8 +39,13 @@
 
 .form__error {
     height: 20px;
-    color: #FF9494;
+    width: fit-content;
+    background-color: #87837826;
+    color: #EB5757;
+    font-size: 14px;
     text-align: left;
+    border-radius: 4px;
+    margin-top: 5px;
 }
 
 input, textarea, select {
