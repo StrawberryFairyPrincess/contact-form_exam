@@ -30,10 +30,23 @@ class ContactCsvService {
     public function contactExport()
     {
 
-    $contacts = Contact::all(['id', 'name', 'email'])->toArray();
+    $contacts = Contact::with('category')->toArray();
 
     $csvContent = fopen('php://temp', 'r+'); // 一時的なストリーム
-    fputcsv($csvContent, ['ID', '名前', 'メールアドレス']); // 日本語のヘッダー
+
+    fputcsv($csvContent, [ // 日本語のヘッダー
+        'ID',
+        'お問い合わせの種類ID',
+        '姓',
+        '名',
+        '性別',
+        'メールアドレス',
+        '電話番号',
+        '住所',
+        '建物名',
+        // 'お問い合わせの種類',
+        'お問い合わせ内容'
+    ]);
     foreach ($contacts as $contact) {
         fputcsv($csvContent, $contact);
     }
