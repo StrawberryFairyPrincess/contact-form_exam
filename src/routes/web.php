@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AuthController;
-// use App\Http\Controllers\ModalController;
 
 
 /*
@@ -39,7 +38,3 @@ Route::get('/login', [AuthController::class, 'login']);
 // deleteメソッドで'/delete'にアクセスしたとき、AuthControllerの'destroy'アクションを呼び出す
 Route::delete('/delete', [AuthController::class, 'destroy']);
 
-
-
-// モーダルウィンドウ
-// Route::get('/modal', [ModalController::class, 'modal']);
