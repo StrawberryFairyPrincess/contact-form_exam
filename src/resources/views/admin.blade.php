@@ -162,52 +162,10 @@
           <td class="contact-table__data">
 
             <div class="detail-button">
-
-              {{-- @if( $loop->iteration % 1 == 0 )
-                <button class="contact__detail-button" popovertarget="popover-1" type="button">詳細</button>
-              @elseif( $loop->iteration % 2 == 0 )
-                <button class="contact__detail-button" popovertarget="popover-2" type="button">詳細</button>
-              @elseif( $loop->iteration % 3 == 0 )
-                <button class="contact__detail-button" popovertarget="popover-3" type="button">詳細</button>
-              @elseif( $loop->iteration % 4 == 0 )
-                <button class="contact__detail-button" popovertarget="popover-4" type="button">詳細</button>
-              @elseif( $loop->iteration % 5 == 0 )
-                <button class="contact__detail-button" popovertarget="popover-5" type="button">詳細</button>
-              @elseif( $loop->iteration % 6 == 0 )
-                <button class="contact__detail-button" popovertarget="popover-6" type="button">詳細</button>
-              @elseif( $loop->iteration % 7 == 0 )
-                <button class="contact__detail-button" popovertarget="popover-7" type="button">詳細</button>
-              @endif --}}
-
               <button class="contact__detail-button" popovertarget="<?= 'modal-' . $loop->iteration ?>" type="button">詳細</button>
-
             </div>
 
             {{-- モーダルウィンドウ --}}
-
-            {{-- @if( $loop->iteration % 1 == 0 )
-              <div class="modal" id="popover-1" popover="manual" popover>
-                <button class="close" popovertarget="popover-1" popovertargetaction="hide" type="button">×</button>
-            @elseif( $loop->iteration % 2 == 0 )
-              <div class="modal" id="popover-2" popover="manual" popover>
-                <button class="close" popovertarget="popover-2" popovertargetaction="hide" type="button">×</button>
-            @elseif( $loop->iteration % 3 == 0 )
-              <div class="modal" id="popover-3" popover="manual" popover>
-                <button class="close" popovertarget="popover-3" popovertargetaction="hide" type="button">×</button>
-            @elseif( $loop->iteration % 4 == 0 )
-              <div class="modal" id="popover-4" popover="manual" popover>
-                <button class="close" popovertarget="popover-4" popovertargetaction="hide" type="button">×</button>
-            @elseif( $loop->iteration % 5 == 0 )
-              <div class="modal" id="popover-5" popover="manual" popover>
-                <button class="close" popovertarget="popover-5" popovertargetaction="hide" type="button">×</button>
-            @elseif( $loop->iteration % 6 == 0 )
-              <div class="modal" id="popover-6" popover="manual" popover>
-                <button class="close" popovertarget="popover-6" popovertargetaction="hide" type="button">×</button>
-            @elseif( $loop->iteration % 7 == 0 )
-              <div class="modal" id="popover-7" popover="manual" popover>
-                <button class="close" popovertarget="popover-7" popovertargetaction="hide" type="button">×</button>
-            @endif --}}
-
             <div class="modal" id="<?= 'modal-' . $loop->iteration ?>" popover="manual" popover>
               <button class="close" popovertarget="<?= 'modal-' . $loop->iteration ?>" popovertargetaction="hide" type="button">×</button>
 
